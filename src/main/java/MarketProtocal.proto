@@ -6,18 +6,25 @@ message CS_SaleCommodity{
 	int32 propType=3;
 	string name=4;
 	bytes abstractProp=5;
+	int32 roleId = 6;
 }
 message SC_SaleCommodity{
 	int32 success=1;
 	int32 commodityId=2;
+	int32 roleId=3;
 }
 
 message CS_BuyCommodity{
 	int32 commodityId=1;
 	int32 num=2;
+	int32 roleId = 3;
 }
 
 message SC_BuyCommodity{
 	int32 success=1;
 	bytes abstractProp=2;
+	int32 roleId =3;
+	int32 propType = 4;
+	int32 num=5;
+	int32 singlePrice = 6;
 }

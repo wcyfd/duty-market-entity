@@ -47,6 +47,11 @@ public final class MarketProtocal {
      * <code>optional bytes abstractProp = 5;</code>
      */
     com.google.protobuf.ByteString getAbstractProp();
+
+    /**
+     * <code>optional int32 roleId = 6;</code>
+     */
+    int getRoleId();
   }
   /**
    * Protobuf type {@code com.aim.duty.duty_market_entity.protobuf.protocal.market.CS_SaleCommodity}
@@ -65,6 +70,7 @@ public final class MarketProtocal {
       propType_ = 0;
       name_ = "";
       abstractProp_ = com.google.protobuf.ByteString.EMPTY;
+      roleId_ = 0;
     }
 
     @java.lang.Override
@@ -116,6 +122,11 @@ public final class MarketProtocal {
             case 42: {
 
               abstractProp_ = input.readBytes();
+              break;
+            }
+            case 48: {
+
+              roleId_ = input.readInt32();
               break;
             }
           }
@@ -211,6 +222,15 @@ public final class MarketProtocal {
       return abstractProp_;
     }
 
+    public static final int ROLEID_FIELD_NUMBER = 6;
+    private int roleId_;
+    /**
+     * <code>optional int32 roleId = 6;</code>
+     */
+    public int getRoleId() {
+      return roleId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -238,6 +258,9 @@ public final class MarketProtocal {
       if (!abstractProp_.isEmpty()) {
         output.writeBytes(5, abstractProp_);
       }
+      if (roleId_ != 0) {
+        output.writeInt32(6, roleId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -263,6 +286,10 @@ public final class MarketProtocal {
       if (!abstractProp_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, abstractProp_);
+      }
+      if (roleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, roleId_);
       }
       memoizedSize = size;
       return size;
@@ -290,6 +317,8 @@ public final class MarketProtocal {
           .equals(other.getName());
       result = result && getAbstractProp()
           .equals(other.getAbstractProp());
+      result = result && (getRoleId()
+          == other.getRoleId());
       return result;
     }
 
@@ -310,6 +339,8 @@ public final class MarketProtocal {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + ABSTRACTPROP_FIELD_NUMBER;
       hash = (53 * hash) + getAbstractProp().hashCode();
+      hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -438,6 +469,8 @@ public final class MarketProtocal {
 
         abstractProp_ = com.google.protobuf.ByteString.EMPTY;
 
+        roleId_ = 0;
+
         return this;
       }
 
@@ -465,6 +498,7 @@ public final class MarketProtocal {
         result.propType_ = propType_;
         result.name_ = name_;
         result.abstractProp_ = abstractProp_;
+        result.roleId_ = roleId_;
         onBuilt();
         return result;
       }
@@ -521,6 +555,9 @@ public final class MarketProtocal {
         }
         if (other.getAbstractProp() != com.google.protobuf.ByteString.EMPTY) {
           setAbstractProp(other.getAbstractProp());
+        }
+        if (other.getRoleId() != 0) {
+          setRoleId(other.getRoleId());
         }
         onChanged();
         return this;
@@ -723,6 +760,32 @@ public final class MarketProtocal {
         onChanged();
         return this;
       }
+
+      private int roleId_ ;
+      /**
+       * <code>optional int32 roleId = 6;</code>
+       */
+      public int getRoleId() {
+        return roleId_;
+      }
+      /**
+       * <code>optional int32 roleId = 6;</code>
+       */
+      public Builder setRoleId(int value) {
+        
+        roleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 roleId = 6;</code>
+       */
+      public Builder clearRoleId() {
+        
+        roleId_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -785,6 +848,11 @@ public final class MarketProtocal {
      * <code>optional int32 commodityId = 2;</code>
      */
     int getCommodityId();
+
+    /**
+     * <code>optional int32 roleId = 3;</code>
+     */
+    int getRoleId();
   }
   /**
    * Protobuf type {@code com.aim.duty.duty_market_entity.protobuf.protocal.market.SC_SaleCommodity}
@@ -800,6 +868,7 @@ public final class MarketProtocal {
     private SC_SaleCommodity() {
       success_ = 0;
       commodityId_ = 0;
+      roleId_ = 0;
     }
 
     @java.lang.Override
@@ -835,6 +904,11 @@ public final class MarketProtocal {
             case 16: {
 
               commodityId_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              roleId_ = input.readInt32();
               break;
             }
           }
@@ -878,6 +952,15 @@ public final class MarketProtocal {
       return commodityId_;
     }
 
+    public static final int ROLEID_FIELD_NUMBER = 3;
+    private int roleId_;
+    /**
+     * <code>optional int32 roleId = 3;</code>
+     */
+    public int getRoleId() {
+      return roleId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -896,6 +979,9 @@ public final class MarketProtocal {
       if (commodityId_ != 0) {
         output.writeInt32(2, commodityId_);
       }
+      if (roleId_ != 0) {
+        output.writeInt32(3, roleId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -910,6 +996,10 @@ public final class MarketProtocal {
       if (commodityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, commodityId_);
+      }
+      if (roleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, roleId_);
       }
       memoizedSize = size;
       return size;
@@ -931,6 +1021,8 @@ public final class MarketProtocal {
           == other.getSuccess());
       result = result && (getCommodityId()
           == other.getCommodityId());
+      result = result && (getRoleId()
+          == other.getRoleId());
       return result;
     }
 
@@ -945,6 +1037,8 @@ public final class MarketProtocal {
       hash = (53 * hash) + getSuccess();
       hash = (37 * hash) + COMMODITYID_FIELD_NUMBER;
       hash = (53 * hash) + getCommodityId();
+      hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1067,6 +1161,8 @@ public final class MarketProtocal {
 
         commodityId_ = 0;
 
+        roleId_ = 0;
+
         return this;
       }
 
@@ -1091,6 +1187,7 @@ public final class MarketProtocal {
         com.aim.duty.duty_market_entity.protobuf.protocal.market.MarketProtocal.SC_SaleCommodity result = new com.aim.duty.duty_market_entity.protobuf.protocal.market.MarketProtocal.SC_SaleCommodity(this);
         result.success_ = success_;
         result.commodityId_ = commodityId_;
+        result.roleId_ = roleId_;
         onBuilt();
         return result;
       }
@@ -1137,6 +1234,9 @@ public final class MarketProtocal {
         }
         if (other.getCommodityId() != 0) {
           setCommodityId(other.getCommodityId());
+        }
+        if (other.getRoleId() != 0) {
+          setRoleId(other.getRoleId());
         }
         onChanged();
         return this;
@@ -1215,6 +1315,32 @@ public final class MarketProtocal {
         onChanged();
         return this;
       }
+
+      private int roleId_ ;
+      /**
+       * <code>optional int32 roleId = 3;</code>
+       */
+      public int getRoleId() {
+        return roleId_;
+      }
+      /**
+       * <code>optional int32 roleId = 3;</code>
+       */
+      public Builder setRoleId(int value) {
+        
+        roleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 roleId = 3;</code>
+       */
+      public Builder clearRoleId() {
+        
+        roleId_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1277,6 +1403,11 @@ public final class MarketProtocal {
      * <code>optional int32 num = 2;</code>
      */
     int getNum();
+
+    /**
+     * <code>optional int32 roleId = 3;</code>
+     */
+    int getRoleId();
   }
   /**
    * Protobuf type {@code com.aim.duty.duty_market_entity.protobuf.protocal.market.CS_BuyCommodity}
@@ -1292,6 +1423,7 @@ public final class MarketProtocal {
     private CS_BuyCommodity() {
       commodityId_ = 0;
       num_ = 0;
+      roleId_ = 0;
     }
 
     @java.lang.Override
@@ -1327,6 +1459,11 @@ public final class MarketProtocal {
             case 16: {
 
               num_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              roleId_ = input.readInt32();
               break;
             }
           }
@@ -1370,6 +1507,15 @@ public final class MarketProtocal {
       return num_;
     }
 
+    public static final int ROLEID_FIELD_NUMBER = 3;
+    private int roleId_;
+    /**
+     * <code>optional int32 roleId = 3;</code>
+     */
+    public int getRoleId() {
+      return roleId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1388,6 +1534,9 @@ public final class MarketProtocal {
       if (num_ != 0) {
         output.writeInt32(2, num_);
       }
+      if (roleId_ != 0) {
+        output.writeInt32(3, roleId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -1402,6 +1551,10 @@ public final class MarketProtocal {
       if (num_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, num_);
+      }
+      if (roleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, roleId_);
       }
       memoizedSize = size;
       return size;
@@ -1423,6 +1576,8 @@ public final class MarketProtocal {
           == other.getCommodityId());
       result = result && (getNum()
           == other.getNum());
+      result = result && (getRoleId()
+          == other.getRoleId());
       return result;
     }
 
@@ -1437,6 +1592,8 @@ public final class MarketProtocal {
       hash = (53 * hash) + getCommodityId();
       hash = (37 * hash) + NUM_FIELD_NUMBER;
       hash = (53 * hash) + getNum();
+      hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1559,6 +1716,8 @@ public final class MarketProtocal {
 
         num_ = 0;
 
+        roleId_ = 0;
+
         return this;
       }
 
@@ -1583,6 +1742,7 @@ public final class MarketProtocal {
         com.aim.duty.duty_market_entity.protobuf.protocal.market.MarketProtocal.CS_BuyCommodity result = new com.aim.duty.duty_market_entity.protobuf.protocal.market.MarketProtocal.CS_BuyCommodity(this);
         result.commodityId_ = commodityId_;
         result.num_ = num_;
+        result.roleId_ = roleId_;
         onBuilt();
         return result;
       }
@@ -1629,6 +1789,9 @@ public final class MarketProtocal {
         }
         if (other.getNum() != 0) {
           setNum(other.getNum());
+        }
+        if (other.getRoleId() != 0) {
+          setRoleId(other.getRoleId());
         }
         onChanged();
         return this;
@@ -1707,6 +1870,32 @@ public final class MarketProtocal {
         onChanged();
         return this;
       }
+
+      private int roleId_ ;
+      /**
+       * <code>optional int32 roleId = 3;</code>
+       */
+      public int getRoleId() {
+        return roleId_;
+      }
+      /**
+       * <code>optional int32 roleId = 3;</code>
+       */
+      public Builder setRoleId(int value) {
+        
+        roleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 roleId = 3;</code>
+       */
+      public Builder clearRoleId() {
+        
+        roleId_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1769,6 +1958,26 @@ public final class MarketProtocal {
      * <code>optional bytes abstractProp = 2;</code>
      */
     com.google.protobuf.ByteString getAbstractProp();
+
+    /**
+     * <code>optional int32 roleId = 3;</code>
+     */
+    int getRoleId();
+
+    /**
+     * <code>optional int32 propType = 4;</code>
+     */
+    int getPropType();
+
+    /**
+     * <code>optional int32 num = 5;</code>
+     */
+    int getNum();
+
+    /**
+     * <code>optional int32 singlePrice = 6;</code>
+     */
+    int getSinglePrice();
   }
   /**
    * Protobuf type {@code com.aim.duty.duty_market_entity.protobuf.protocal.market.SC_BuyCommodity}
@@ -1784,6 +1993,10 @@ public final class MarketProtocal {
     private SC_BuyCommodity() {
       success_ = 0;
       abstractProp_ = com.google.protobuf.ByteString.EMPTY;
+      roleId_ = 0;
+      propType_ = 0;
+      num_ = 0;
+      singlePrice_ = 0;
     }
 
     @java.lang.Override
@@ -1819,6 +2032,26 @@ public final class MarketProtocal {
             case 18: {
 
               abstractProp_ = input.readBytes();
+              break;
+            }
+            case 24: {
+
+              roleId_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              propType_ = input.readInt32();
+              break;
+            }
+            case 40: {
+
+              num_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              singlePrice_ = input.readInt32();
               break;
             }
           }
@@ -1862,6 +2095,42 @@ public final class MarketProtocal {
       return abstractProp_;
     }
 
+    public static final int ROLEID_FIELD_NUMBER = 3;
+    private int roleId_;
+    /**
+     * <code>optional int32 roleId = 3;</code>
+     */
+    public int getRoleId() {
+      return roleId_;
+    }
+
+    public static final int PROPTYPE_FIELD_NUMBER = 4;
+    private int propType_;
+    /**
+     * <code>optional int32 propType = 4;</code>
+     */
+    public int getPropType() {
+      return propType_;
+    }
+
+    public static final int NUM_FIELD_NUMBER = 5;
+    private int num_;
+    /**
+     * <code>optional int32 num = 5;</code>
+     */
+    public int getNum() {
+      return num_;
+    }
+
+    public static final int SINGLEPRICE_FIELD_NUMBER = 6;
+    private int singlePrice_;
+    /**
+     * <code>optional int32 singlePrice = 6;</code>
+     */
+    public int getSinglePrice() {
+      return singlePrice_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1880,6 +2149,18 @@ public final class MarketProtocal {
       if (!abstractProp_.isEmpty()) {
         output.writeBytes(2, abstractProp_);
       }
+      if (roleId_ != 0) {
+        output.writeInt32(3, roleId_);
+      }
+      if (propType_ != 0) {
+        output.writeInt32(4, propType_);
+      }
+      if (num_ != 0) {
+        output.writeInt32(5, num_);
+      }
+      if (singlePrice_ != 0) {
+        output.writeInt32(6, singlePrice_);
+      }
     }
 
     public int getSerializedSize() {
@@ -1894,6 +2175,22 @@ public final class MarketProtocal {
       if (!abstractProp_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, abstractProp_);
+      }
+      if (roleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, roleId_);
+      }
+      if (propType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, propType_);
+      }
+      if (num_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, num_);
+      }
+      if (singlePrice_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, singlePrice_);
       }
       memoizedSize = size;
       return size;
@@ -1915,6 +2212,14 @@ public final class MarketProtocal {
           == other.getSuccess());
       result = result && getAbstractProp()
           .equals(other.getAbstractProp());
+      result = result && (getRoleId()
+          == other.getRoleId());
+      result = result && (getPropType()
+          == other.getPropType());
+      result = result && (getNum()
+          == other.getNum());
+      result = result && (getSinglePrice()
+          == other.getSinglePrice());
       return result;
     }
 
@@ -1929,6 +2234,14 @@ public final class MarketProtocal {
       hash = (53 * hash) + getSuccess();
       hash = (37 * hash) + ABSTRACTPROP_FIELD_NUMBER;
       hash = (53 * hash) + getAbstractProp().hashCode();
+      hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleId();
+      hash = (37 * hash) + PROPTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getPropType();
+      hash = (37 * hash) + NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getNum();
+      hash = (37 * hash) + SINGLEPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + getSinglePrice();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2051,6 +2364,14 @@ public final class MarketProtocal {
 
         abstractProp_ = com.google.protobuf.ByteString.EMPTY;
 
+        roleId_ = 0;
+
+        propType_ = 0;
+
+        num_ = 0;
+
+        singlePrice_ = 0;
+
         return this;
       }
 
@@ -2075,6 +2396,10 @@ public final class MarketProtocal {
         com.aim.duty.duty_market_entity.protobuf.protocal.market.MarketProtocal.SC_BuyCommodity result = new com.aim.duty.duty_market_entity.protobuf.protocal.market.MarketProtocal.SC_BuyCommodity(this);
         result.success_ = success_;
         result.abstractProp_ = abstractProp_;
+        result.roleId_ = roleId_;
+        result.propType_ = propType_;
+        result.num_ = num_;
+        result.singlePrice_ = singlePrice_;
         onBuilt();
         return result;
       }
@@ -2121,6 +2446,18 @@ public final class MarketProtocal {
         }
         if (other.getAbstractProp() != com.google.protobuf.ByteString.EMPTY) {
           setAbstractProp(other.getAbstractProp());
+        }
+        if (other.getRoleId() != 0) {
+          setRoleId(other.getRoleId());
+        }
+        if (other.getPropType() != 0) {
+          setPropType(other.getPropType());
+        }
+        if (other.getNum() != 0) {
+          setNum(other.getNum());
+        }
+        if (other.getSinglePrice() != 0) {
+          setSinglePrice(other.getSinglePrice());
         }
         onChanged();
         return this;
@@ -2199,6 +2536,110 @@ public final class MarketProtocal {
       public Builder clearAbstractProp() {
         
         abstractProp_ = getDefaultInstance().getAbstractProp();
+        onChanged();
+        return this;
+      }
+
+      private int roleId_ ;
+      /**
+       * <code>optional int32 roleId = 3;</code>
+       */
+      public int getRoleId() {
+        return roleId_;
+      }
+      /**
+       * <code>optional int32 roleId = 3;</code>
+       */
+      public Builder setRoleId(int value) {
+        
+        roleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 roleId = 3;</code>
+       */
+      public Builder clearRoleId() {
+        
+        roleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int propType_ ;
+      /**
+       * <code>optional int32 propType = 4;</code>
+       */
+      public int getPropType() {
+        return propType_;
+      }
+      /**
+       * <code>optional int32 propType = 4;</code>
+       */
+      public Builder setPropType(int value) {
+        
+        propType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 propType = 4;</code>
+       */
+      public Builder clearPropType() {
+        
+        propType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int num_ ;
+      /**
+       * <code>optional int32 num = 5;</code>
+       */
+      public int getNum() {
+        return num_;
+      }
+      /**
+       * <code>optional int32 num = 5;</code>
+       */
+      public Builder setNum(int value) {
+        
+        num_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 num = 5;</code>
+       */
+      public Builder clearNum() {
+        
+        num_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int singlePrice_ ;
+      /**
+       * <code>optional int32 singlePrice = 6;</code>
+       */
+      public int getSinglePrice() {
+        return singlePrice_;
+      }
+      /**
+       * <code>optional int32 singlePrice = 6;</code>
+       */
+      public Builder setSinglePrice(int value) {
+        
+        singlePrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 singlePrice = 6;</code>
+       */
+      public Builder clearSinglePrice() {
+        
+        singlePrice_ = 0;
         onChanged();
         return this;
       }
@@ -2282,14 +2723,17 @@ public final class MarketProtocal {
     java.lang.String[] descriptorData = {
       "\n\024MarketProtocal.proto\0228com.aim.duty.dut" +
       "y_market_entity.protobuf.protocal.market" +
-      "\"j\n\020CS_SaleCommodity\022\023\n\013singlePrice\030\001 \001(" +
+      "\"z\n\020CS_SaleCommodity\022\023\n\013singlePrice\030\001 \001(" +
       "\005\022\013\n\003num\030\002 \001(\005\022\020\n\010propType\030\003 \001(\005\022\014\n\004name" +
-      "\030\004 \001(\t\022\024\n\014abstractProp\030\005 \001(\014\"8\n\020SC_SaleC" +
-      "ommodity\022\017\n\007success\030\001 \001(\005\022\023\n\013commodityId" +
-      "\030\002 \001(\005\"3\n\017CS_BuyCommodity\022\023\n\013commodityId" +
-      "\030\001 \001(\005\022\013\n\003num\030\002 \001(\005\"8\n\017SC_BuyCommodity\022\017" +
-      "\n\007success\030\001 \001(\005\022\024\n\014abstractProp\030\002 \001(\014b\006p" +
-      "roto3"
+      "\030\004 \001(\t\022\024\n\014abstractProp\030\005 \001(\014\022\016\n\006roleId\030\006" +
+      " \001(\005\"H\n\020SC_SaleCommodity\022\017\n\007success\030\001 \001(" +
+      "\005\022\023\n\013commodityId\030\002 \001(\005\022\016\n\006roleId\030\003 \001(\005\"C" +
+      "\n\017CS_BuyCommodity\022\023\n\013commodityId\030\001 \001(\005\022\013" +
+      "\n\003num\030\002 \001(\005\022\016\n\006roleId\030\003 \001(\005\"|\n\017SC_BuyCom" +
+      "modity\022\017\n\007success\030\001 \001(\005\022\024\n\014abstractProp\030",
+      "\002 \001(\014\022\016\n\006roleId\030\003 \001(\005\022\020\n\010propType\030\004 \001(\005\022" +
+      "\013\n\003num\030\005 \001(\005\022\023\n\013singlePrice\030\006 \001(\005b\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2308,25 +2752,25 @@ public final class MarketProtocal {
     internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_CS_SaleCommodity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_CS_SaleCommodity_descriptor,
-        new java.lang.String[] { "SinglePrice", "Num", "PropType", "Name", "AbstractProp", });
+        new java.lang.String[] { "SinglePrice", "Num", "PropType", "Name", "AbstractProp", "RoleId", });
     internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_SC_SaleCommodity_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_SC_SaleCommodity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_SC_SaleCommodity_descriptor,
-        new java.lang.String[] { "Success", "CommodityId", });
+        new java.lang.String[] { "Success", "CommodityId", "RoleId", });
     internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_CS_BuyCommodity_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_CS_BuyCommodity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_CS_BuyCommodity_descriptor,
-        new java.lang.String[] { "CommodityId", "Num", });
+        new java.lang.String[] { "CommodityId", "Num", "RoleId", });
     internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_SC_BuyCommodity_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_SC_BuyCommodity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_aim_duty_duty_market_entity_protobuf_protocal_market_SC_BuyCommodity_descriptor,
-        new java.lang.String[] { "Success", "AbstractProp", });
+        new java.lang.String[] { "Success", "AbstractProp", "RoleId", "PropType", "Num", "SinglePrice", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

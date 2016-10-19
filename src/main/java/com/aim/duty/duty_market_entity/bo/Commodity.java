@@ -1,16 +1,17 @@
-package com.aim.duty.duty_market_entity;
+package com.aim.duty.duty_market_entity.bo;
 
 import com.aim.duty.duty_base.entity.base.GameEntity;
 import com.google.protobuf.ByteString;
 
 public class Commodity extends GameEntity {
-	/**单价*/
+	/** 单价 */
 	private int singlePrice;
 	private byte salePropType;
 	private int saleNum;
 	private String saleName;
-//	private AbstractProp saleProp;
+	// private AbstractProp saleProp;
 	private ByteString salePropData;
+	private int roleId;
 
 	@Override
 	public boolean isChange() {
@@ -34,7 +35,7 @@ public class Commodity extends GameEntity {
 	}
 
 	public ByteString getSalePropData() {
-//		this.salePropData = saleProp.serialize();
+		// this.salePropData = saleProp.serialize();
 		return salePropData;
 	}
 
@@ -42,13 +43,13 @@ public class Commodity extends GameEntity {
 		this.salePropData = salePropData;
 	}
 
-//	public AbstractProp getSaleProp() {
-//		return saleProp;
-//	}
-//
-//	public void setSaleProp(AbstractProp saleProp) {
-//		this.saleProp = saleProp;
-//	}
+	// public AbstractProp getSaleProp() {
+	// return saleProp;
+	// }
+	//
+	// public void setSaleProp(AbstractProp saleProp) {
+	// this.saleProp = saleProp;
+	// }
 
 	public int getSaleNum() {
 		return saleNum;
@@ -64,6 +65,14 @@ public class Commodity extends GameEntity {
 
 	public void setSaleName(String saleName) {
 		this.saleName = saleName;
+	}
+
+	public int getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
 	}
 
 }
